@@ -8,16 +8,16 @@ rename = function(filename, output = NULL) {
     newname = x[1,2]
     x[3,2] <- x[1,2]
     #delete first row and first column that hold legacy names
-    y=x[2:nrow(x), 2:ncol(x)]
+    x=x[2:nrow(x), 2:ncol(x)]
     #delete all rows with unwanted words in the second column
-    dat = y[!grepl("(1)", y$V2, fixed = TRUE),]
-    dat2 = dat[!grepl("Based", dat$V2, fixed = FALSE),]
-    dat3 = dat2[!grepl("Special", dat2$V2, fixed = FALSE),]
+    dat = x[!grepl("(1)", x$V2, fixed = TRUE),]
+    dat = dat[!grepl("Based", dat$V2, fixed = FALSE),]
+    dat = dat[!grepl("Special", dat$V2, fixed = FALSE),]
     #delete all 'totals' rows
-    dat4 = dat3[!grepl("TIMOR-LESTE", dat3$V2, fixed = TRUE),]
-    dat5 = dat4[!grepl("TOTAL", dat4$V2, fixed = TRUE),]
+    dat = dat[!grepl("TIMOR-LESTE", dat$V2, fixed = TRUE),]
+    dat = dat[!grepl("TOTAL", dat$V2, fixed = TRUE),]
     #to clean all rows complete with NAs
-    clean = dat5[rowSums(is.na(dat5)) != ncol(dat5),]
+    clean = dat[rowSums(is.na(dat)) != ncol(dat),]
     #clean up NA with value below
     #clean[is.na(clean)] <- 0
     cleanNA = t(na.locf(t(clean), fromLast = FALSE))

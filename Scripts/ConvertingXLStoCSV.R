@@ -9,55 +9,37 @@ importWorksheets <- function(filename) {
      sheet_list <- lapply(sheet_names, function(.sheet){
          readWorksheet(object=workbook, .sheet)})
     }
-# wb = importWorksheets("1_2015-V2-Population-Household-Distribution.xls")
-
-#working on reading in multiple files
-# wbs = list.files(pattern = "*.xls")
+#wb = importWorksheets("data/1_2015-V2-Population-Household-Distribution.xls")
 
 
-
-# creating a function to get sheet names
-#  newfilename = function(filename) {
-    # workbook <- loadWorkbook(filename)
-    # sheet_names <- getSheets(workbook)  
-  # }
-
-  
-  
-# write csv for second sheet with sheet name
-# write.csv(wb[2], sheet_names[2])
-
-# and third
-# write.csv(wb[3], sheet_names[3])
-
-
-
+#filename = "data/1_2015-V2-Population-Household-Distribution.xls"
+#output = "output/OldName/"
 #writting csv files from one Excel workbook
 csv = function(filename, output = NULL) {
   #input: 
   # filename: character string of a xls file name
   # output: character string of the saved csv
   wb = importWorksheets(filename)
-  gsub(",","",wb)
   if(!is.null(output)) {
     for (x in seq_along(wb)) {
       # getting sheet names (to write csv with sheet name)
       workbook <- loadWorkbook(filename)
       sheet_names <- getSheets(workbook)
       #writing csv with sheet names as filename
-      df = gsub(",","",wb[x])
+      df = wb[x]
       write.csv(df, file = paste(output,sheet_names[x], ".csv", sep = ""))
       }
     }
 }
-
+csv("data/1_2015-V2-Population-Household-Distribution.xls", output = "output/OldName/")
 
 csv_all = function(pattern) {
-  dir = "output/OldName/"
-  filenames = list.files(pattern = pattern)
+  output = "output/OldName/"
+  input = "data/"
+  filenames = list.files(path = input, pattern = pattern)
   for (f in filenames) {
-      csv_name = paste(dir,f,sep="")
-      csv(f, output = csv_name)
+      csv_name = paste(output,f,sep="")
+      csv(paste(input,f,sep=""), output = csv_name)
   }
 }
 
