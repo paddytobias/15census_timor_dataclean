@@ -1,6 +1,7 @@
-## collapse first two rows  into one and designate as header
+## THIRD SCRIPT: collapse first two rows  into one and designate as header
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName")
+dir.create("Final/")
 collapseHead=function(filename, output = NULL) {
   if(!is.null(output)) {
     #collapsing first two rows

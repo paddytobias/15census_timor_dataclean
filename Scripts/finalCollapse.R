@@ -1,4 +1,4 @@
-## using collapseHeader to do a final 2 heading collapse for datasets that still have two headings
+## FOURTH SCRIPT: using collapseHeader to do a final 2 heading collapse for datasets that still have two headings
 
 #filename = "X2.16j.Table.16.j.Age.at.first.marriage.of.persons.aged.over.nine.years.by.age.and.sex..Manatuto.csv"
 

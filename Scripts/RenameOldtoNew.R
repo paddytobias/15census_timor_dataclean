@@ -1,7 +1,8 @@
-##Renaming and cleaning csv files
+##SECOND SCRIPT: Renaming and cleaning csv files
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015")
 library(zoo)
+dir.create("output/NewName/")
 rename = function(filename, output = NULL) {
   if(!is.null(output)) {
     x = read.csv(filename, header = FALSE, stringsAsFactors = FALSE)
@@ -27,7 +28,7 @@ rename = function(filename, output = NULL) {
   }
 }
 
-#rename("output/OldName/1_2015-V2-Population-Household-Distribution.xls2.2.b.csv", "output/test/")
+#rename("output/OldName/1_2015-V2-Population-Household-Distribution.xls2.2.b.csv", "output/OldNames/")
 
 rename_all = function(pattern) {
   data_dir = "output/OldName/"

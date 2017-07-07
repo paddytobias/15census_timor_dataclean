@@ -1,5 +1,9 @@
+### FIRST SCRIPT TO CONVRT TO CSV
+
+
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015")
 library(XLConnect)
+dir.create("output/OldName/")
 # Import all worksheets and names from a workbook
 importWorksheets <- function(filename) {
      # filename: name of Excel file
