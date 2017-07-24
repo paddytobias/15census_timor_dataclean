@@ -6,15 +6,15 @@ setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName/Final")
 
 finalCollapse = function(filename, output) {
   if(!is.null(output)) {
-    dat = read.csv(filename, header = TRUE, stringsAsFactors = FALSE)
+    df = read.csv(filename, header = TRUE, stringsAsFactors = FALSE)
     #write.csv(dat, filename)
     #dat = read.csv(filename, header = FALSE)
     #FinalClean = read.csv("FinalClean", header = TRUE, stringsAsFactors = FALSE)
-    if(dat[1,1] == 0){
-      data = read.table(filename, skip = 2, sep=",")
+    if(df[1,1] == 0){
+      df = read.table(filename, skip = 2, sep=",")
       labels = read.table(filename, nrows = 2, stringsAsFactors = FALSE, fill = TRUE, sep = ",")
-      names(data) = sapply(labels, paste, collapse = "_")
-      write.table(data, paste("./", filename,sep=""), col.names = TRUE, row.names = FALSE, sep =",")
+      names(df) = sapply(labels, paste, collapse = "_")
+      write.table(df, paste("./", filename,sep=""), col.names = TRUE, row.names = FALSE, sep =",")
     }
   }
 }

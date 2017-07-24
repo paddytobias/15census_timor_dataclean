@@ -2,12 +2,12 @@
 
 #need to fix this code, wanting to create a table with two field, one field for Volume headings and the other field for Table headings
 
-
+#filename = "X2.1.a.Table.1.a.Total.population.and.household.type.by.sex.and.Municipality.csv"
 #grab Volume heading and enter into a table of its own called "TableNames"
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName/Final")
 df = data.frame("TableNames" = character(), stringsAsFactors = FALSE)
-write.csv(df,"VolumeNames")
+write.csv(df,"VolumeNames.csv")
 grabHeader= function(filename){
   dat = read.csv(filename, header = FALSE)
   #dat = read.csv("X2.1.b.Table.1.b.Urban.population.and.household.type.by.sex.and.Municipality.csv", header = FALSE)
@@ -15,8 +15,8 @@ grabHeader= function(filename){
   volume = gsub(".Table.*", "", header)
   #pattern = ".*.Table"
   #header = gsub(pattern, "Table", header)
-  VolNam = read.csv("VolumeNames", header = TRUE, stringsAsFactors = FALSE)
-  write.csv(rbind(VolNam, volume), "VolumeNames", row.names = FALSE)
+  VolNam = read.csv("VolumeNames.csv", header = TRUE, stringsAsFactors = FALSE)
+  write.csv(rbind(VolNam, volume), "VolumeNames.csv", row.names = FALSE)
 }
 
 grabHeader_all= function(pattern){
@@ -35,7 +35,7 @@ grabHeader_all("*.csv")
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName/Final")
 df = data.frame("TableNames" = character(), stringsAsFactors = FALSE)
-write.csv(df,"TableNames")
+write.csv(df,"TableNames.csv")
 grabHeader= function(filename){
   dat = read.csv(filename, header = FALSE)
   #dat = read.csv("X2.1.b.Table.1.b.Urban.population.and.household.type.by.sex.and.Municipality.csv", header = FALSE)
@@ -43,8 +43,8 @@ grabHeader= function(filename){
   #volume = sub(".Table.*", "", header)
   pattern = ".*.Table"
   header = gsub(pattern, "Table", header)
-  TabNam = read.csv("TableNames", header = TRUE, stringsAsFactors = FALSE)
-  write.csv(rbind(TabNam, header), "TableNames", row.names = FALSE)
+  TabNam = read.csv("TableNames.csv", header = TRUE, stringsAsFactors = FALSE)
+  write.csv(rbind(TabNam, header), "TableNames.csv", row.names = FALSE)
 }
 
 grabHeader_all= function(pattern){
@@ -55,3 +55,6 @@ grabHeader_all= function(pattern){
 }
 
 grabHeader_all("*.csv")
+
+x = cbind(read.csv("VolumeNames.csv"),read.csv("TableNames.csv"))
+write.csv(x, "VolTabNames.csv")
