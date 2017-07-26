@@ -1,3 +1,5 @@
+## FIFTH SCRIPT (OPTIONAL): Insert all tables from Final/ directory and inserting it into a SQLite database called Census2015.db
+
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015")
 library(RSQLite)
