@@ -1,4 +1,4 @@
-# Data Processing R scriptlets for 2015 Timor-Leste Census data
+# 2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets
 
 *I am still refining these scripts for others to repeat my work.* 
 
