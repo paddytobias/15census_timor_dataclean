@@ -23,7 +23,7 @@ The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tre
 
 [Scripts_DataReview](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts/Scripts_DataReview) holds a bunch of scripts I am currently writing to do meta-analysis over the data. 
 
-DataReview is now including a script to create a table for each district that compares its totals to the national average and counts the number of times this is above or below, in relevant census data-table. The plan is to then remove all NA rows from these tables and then cbind district tables together to get a national overview of the district breakdown
+DataReview is now including one script ([DistrictReview_allDistricts](https://github.com/paddytobias/15census_timor_dataclean/blob/master/Scripts/Scripts_DataReview/DistrictReview_allDistricts.R)) to create a table for each district that compares its totals to the national average and separately counts the number of times this is above or below. These numbers are only collection on relevant census data-tables, all other data-tables are given NAs. The plan is to then remove all NA rows from these tables and then cbind district tables together to get a national overview of the district breakdown of average comparisons.
 
 ## DOI
 
