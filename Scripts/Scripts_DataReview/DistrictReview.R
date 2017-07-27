@@ -1,18 +1,17 @@
-
+### Script to create a table for one district, Aileu, that calculates the sum of times the district's results are above and below the national average
+## If you are running DistrictReview_allDistrict.R then there is no need runnning this script
+#---------------------------------------
 
 
 setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName/Final")
 filename = "X2.1.a.Table.1.a.Total.population.and.household.type.by.sex.and.Municipality.csv"
-filename = "X2..5.1i.Table.5.1i.Population.by.age.and.sex..Liquiça.csv"
-filename = "X2.2.a.Table.2.a.Total.population.density.and.number.of.households.by.Municipality.csv"
-filename = "X2.21d.Table.21.d.Former.members.of.private.households.living.in.Australia..New.Zealand..or.Other.Pacific.Countries..by.sex..Municipality.and.Administrative.Post.of.household.csv"
+#filename = "X2..5.1i.Table.5.1i.Population.by.age.and.sex..Liquiça.csv"
+#filename = "X2.2.a.Table.2.a.Total.population.density.and.number.of.households.by.Municipality.csv"
+#filename = "X2.21d.Table.21.d.Former.members.of.private.households.living.in.Australia..New.Zealand..or.Other.Pacific.Countries..by.sex..Municipality.and.Administrative.Post.of.household.csv"
 
-TableName = ""
-Above_average = ""
-Below_average = ""
-df = data.frame(TableName,Above_average, Below_average, stringsAsFactors = FALSE)
+df = data.frame(TableName = as.character(),Above_average = as.character(), Below_average = as.character(), stringsAsFactors = FALSE)
 dir.create("Review")
-write.csv(df, "Review/Aileu_Review.csv", row.names = FALSE)
+write.table(df, "Review/Aileu_Review.csv", sep = ",", row.names = FALSE, col.names = TRUE)
 districtReview = function(filename) {
   table = read.csv(filename, header = TRUE, stringsAsFactors = FALSE)
 ## clean up some tables with have whitespace in the first column  
