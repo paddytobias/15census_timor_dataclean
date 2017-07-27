@@ -8,16 +8,24 @@ The objective is to get the Excel data, published by the [General Directorate of
 The [Data folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all 45 Excel workbooks as well as a pdf of the Preliminary Report of the 2015 Population and Housing Census.
 
 ## Scripts
-The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all of the scripts I have been writing.  
 
+The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all of the scripts I have been writing to process and analyse.
+
+### Data Cleaning
 [Scripts_DataCleaning](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts/Scripts_DataCleaning) comprises five scripts used to clean and process the data, including:
 * convert from .xls format into .csv format
 * using the table names to name each .csv file
 * removing any redundant features in the dataframes (e.g., all empty rows, two headings, all 'Totals' rows since can be computed by R, etc.)
 * and insert all data tables into an SQLite database
 
-[Scripts_DataReview](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts/Scripts_DataReview) holds a bunch of scripts I am currently writing to do meta-analysis over the data. One script currently being worked on is to see how each district compares to the national average, either above or below, in each relevant data-table.
+### Data Review
+*These scripts must be run after the DataCleaning scripts because they rely on the data being processed and “clean”.* 
+
+[Scripts_DataReview](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts/Scripts_DataReview) holds a bunch of scripts I am currently writing to do meta-analysis over the data. 
+
+DataReview is now including a script to create a table for each district that compares its totals to the national average and counts the number of times this is above or below, in relevant census data-table. The plan is to then remove all NA rows from these tables and then cbind district tables together to get a national overview of the district breakdown
 
 ## DOI
-The DOI for this collection is 
+
+Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection: 
 [![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
