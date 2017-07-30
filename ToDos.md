@@ -1,5 +1,7 @@
 # To Do list
-*26/7/2017*
+*30/7/2017*
+
+* need to fix 3.collapseHeader. Currently working on Version 2 to be skip trying to read in tables that have no data (after being processed by script 2). 
 
 * flatten the file structure through the R scripts to make more intuitive for end-users
 
