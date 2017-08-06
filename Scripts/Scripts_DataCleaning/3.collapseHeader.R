@@ -1,20 +1,28 @@
 ## THIRD SCRIPT: collapse first two rows  into one and designate as header
 
-setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015/output/NewName")
-dir.create("Final/")
+
+
+
+dir.create("data/finalData/")
 collapseHead=function(filename, output = NULL) {
   if(!is.null(output)) {
-    #collapsing first two rows
-    data = read.table(filename, skip = 2, sep=",")
-    labels = read.table(filename, nrows = 2, stringsAsFactors = FALSE, fill = TRUE, sep = ",")
-    names(data) = sapply(labels, paste, collapse = "_")
-    x = data[!grepl("TIMOR-LESTE", data[,1]),]
-    #y = x[!grepl("Total", x[,1]),]
-    df = x[!grepl("TOTAL", x[,1]),]
-    df[is.na(df)] <-0
-    dat = df[rowSums(df != 0) != 0, ]
-    #write csv
-    write.table(dat,paste(output, filename,sep=""), col.names = TRUE, row.names = FALSE, sep =",")
+    dataSource = "data/data_Cleaning/newName/"
+    #check DFs to see if they have more than 3 rows (in order to eliminate tables with no data). if they do, do the following
+    checkdf = read.table(paste0(dataSource,filename), sep = ",")
+    if (nrow(checkdf) > 3) {
+        #collapsing first two rows
+        data = read.table(paste0(dataSource,filename), skip = 2, sep=",")
+        labels = read.table(paste0(dataSource,filename), nrows = 2, stringsAsFactors = FALSE, fill = TRUE, sep = ",")
+        header = sapply(labels, paste, collapse = "_")
+        names(data) = header
+        x = data[!grepl("TIMOR-LESTE", data[,1]),]
+        #y = x[!grepl("Total", x[,1]),]
+        df = x[!grepl("TOTAL", x[,1]),]
+        df[is.na(df)] <-0
+        dat = df[rowSums(df != 0) != 0, ]
+        #write csv
+        write.table(dat,paste0(output, filename), col.names = TRUE, row.names = FALSE, sep =",") 
+      } 
   }
 }
 
@@ -24,12 +32,10 @@ collapseHead=function(filename, output = NULL) {
 
 
 collapseHead_all = function(pattern) {
-  filenames = list.files(path = ".", pattern = pattern)
+  filenames = list.files(path = "data/data_Cleaning/newName/", pattern = pattern)
   for (f in filenames) {
-    collapseHead(file.path(".",f),output = "Final/")
+    collapseHead(f,output = "data/finalData/")
   }
 }
 
 collapseHead_all('*.csv')
-
-

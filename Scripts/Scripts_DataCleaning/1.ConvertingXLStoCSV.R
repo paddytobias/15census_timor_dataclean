@@ -1,9 +1,9 @@
 ### FIRST SCRIPT TO CONVRT TO CSV
 
 
-setwd("~/ownCloud/Timor-Leste/Data/Population/Census_2015")
 library(XLConnect)
-dir.create("output/OldName/")
+dir.create("data/data_Cleaning/")
+dir.create("data/data_Cleaning/oldName")
 # Import all worksheets and names from a workbook
 importWorksheets <- function(filename) {
      # filename: name of Excel file
@@ -35,11 +35,11 @@ csv = function(filename, output = NULL) {
       }
     }
 }
-csv("data/1_2015-V2-Population-Household-Distribution.xls", output = "output/OldName/")
+#csv("data/sourceData/1_2015-V2-Population-Household-Distribution.xls", output = "data/data_Cleaning/oldName/")
 
 csv_all = function(pattern) {
-  output = "output/OldName/"
-  input = "data/"
+  output = "data/data_Cleaning/oldName/"
+  input = "data/sourceData/"
   filenames = list.files(path = input, pattern = pattern)
   for (f in filenames) {
       csv_name = paste(output,f,sep="")
