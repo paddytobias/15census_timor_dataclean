@@ -4,12 +4,12 @@
 
 library(RSQLite)
 
-dir.create("data/database")
+dir.create("data/data_Cleaning/database")
 #filename = "X2.1.b.Table.1.b.Urban.population.and.household.type.by.sex.and.Municipality.csv"
 dbInsert = function(filename){
-  db = dbConnect(SQLite(), dbname = "data/database/Census2015.db")
-  dat = read.csv(paste("data/finalData/",filename, sep = ""))
-  dat2 = read.csv(paste("data/finalData/",filename, sep = ""), header = FALSE)
+  db = dbConnect(SQLite(), dbname = "data/data_Cleaning/database/Census2015.db")
+  dat = read.csv(paste("data/data_Cleaning/finalData/",filename, sep = ""))
+  dat2 = read.csv(paste("data/data_Cleaning/finalData/",filename, sep = ""), header = FALSE)
   header = toString(dat2[1,1])
   name = sub(".Table.*", "", header)
   dbWriteTable(conn = db, name = name, dat, overwrite = T, row.names = FALSE)
@@ -19,7 +19,7 @@ dbInsert = function(filename){
 #dat = read.csv("X2.1.b.Table.1.b.Urban.population.and.household.type.by.sex.and.Municipality.csv", header = FALSE)
 
 dbInsert_all = function(pattern) {
-  filenames = list.files(path = "data/finalData/", pattern = pattern)
+  filenames = list.files(path = "data/data_Cleaning/finalData/", pattern = pattern)
   for (f in filenames) {
     dbInsert(f)
   }

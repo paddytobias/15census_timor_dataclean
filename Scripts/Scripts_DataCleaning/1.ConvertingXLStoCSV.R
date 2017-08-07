@@ -13,7 +13,7 @@ importWorksheets <- function(filename) {
      sheet_list <- lapply(sheet_names, function(.sheet){
          readWorksheet(object=workbook, .sheet)})
     }
-#wb = importWorksheets("data/1_2015-V2-Population-Household-Distribution.xls")
+
 
 
 #filename = "data/1_2015-V2-Population-Household-Distribution.xls"

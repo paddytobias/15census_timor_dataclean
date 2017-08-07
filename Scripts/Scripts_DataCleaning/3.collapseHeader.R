@@ -3,7 +3,7 @@
 
 
 
-dir.create("data/finalData/")
+dir.create("data/data_Cleaning/finalData/")
 collapseHead=function(filename, output = NULL) {
   if(!is.null(output)) {
     dataSource = "data/data_Cleaning/newName/"
@@ -34,7 +34,7 @@ collapseHead=function(filename, output = NULL) {
 collapseHead_all = function(pattern) {
   filenames = list.files(path = "data/data_Cleaning/newName/", pattern = pattern)
   for (f in filenames) {
-    collapseHead(f,output = "data/finalData/")
+    collapseHead(f,output = "data/data_Cleaning/finalData/")
   }
 }
 

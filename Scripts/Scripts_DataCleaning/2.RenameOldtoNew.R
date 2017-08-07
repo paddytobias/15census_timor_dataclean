@@ -1,6 +1,5 @@
 ##SECOND SCRIPT: Renaming and cleaning csv files
 
-
 library(zoo)
 dir.create("data/data_Cleaning/newName/")
 rename = function(filename, output = NULL) {
