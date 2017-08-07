@@ -9,7 +9,7 @@ The [Data folder](https://github.com/paddytobias/15census_timor_dataclean/tree/m
 
 ## Scripts
 
-The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all of the scripts I have been writing to process and analyse.
+The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts) holds all of the scripts I have been writing to process and analyse.
 
 ### Data Cleaning
 [Scripts_DataCleaning](https://github.com/paddytobias/15census_timor_dataclean/tree/master/Scripts/Scripts_DataCleaning) comprises five scripts used to clean and process the data, including:
