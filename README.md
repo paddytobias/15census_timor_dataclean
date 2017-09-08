@@ -47,8 +47,8 @@ Data Cleaning:
 
 3. Collapse the headers into one row
 
-`Rscript Scripts/Scripts_DataCleaning/3.collapseHeader.R
-Rscript Scripts/Scripts_DataCleaning/4.finalCollapse.R`
+`Rscript Scripts/Scripts_DataCleaning/3.collapseHeader.R`
+`Rscript Scripts/Scripts_DataCleaning/4.finalCollapse.R`
 
 4. Do a final clean
 
