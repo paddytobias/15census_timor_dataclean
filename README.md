@@ -60,7 +60,7 @@ After you’ve downloaded the Git repository run the following scripts from comm
 
 Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection:
 
-Tobias P, 2017, “2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets”, GitHub, [![https://github.com/paddytobias/15census_timor_dataclean]](https://github.com/paddytobias/15census_timor_dataclean), 
+Tobias P, 2017, “2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets”, GitHub, ![https://github.com/paddytobias/15census_timor_dataclean](https://github.com/paddytobias/15census_timor_dataclean), 
 [![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
 
 
