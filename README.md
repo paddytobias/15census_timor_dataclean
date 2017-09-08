@@ -29,7 +29,7 @@ DataReview is now including one script ([DistrictReview_allDistricts](https://gi
 
 ## Processing the data yourself
 
-The prerequisite for running these scripts is the ![latest download of R](https://cran.r-project.org/mirrors.html).
+The prerequisite for running these scripts is the [latest download of R](https://cran.r-project.org/mirrors.html).
 
 Then you will need to download this Git repository. After you have done this, run the scripts with the following commands:
 
