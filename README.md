@@ -54,7 +54,7 @@ Then you will need to download this Git repository. After you have done this, ru
 
 ### Reviewing the data:
  
-5. Review all districts by how they compare to the national average for each table variable (where relevant). Upon running this you will get a folder for each district holding the mean comparison results for all tables that the district appears in. The folders will also include a `Review` file that gives an overview of the districts performance. Find out more by running this:
+5. Review all districts by how they compare to the national average for each table variable (where relevant). Upon running this you will get a folder for each district holding the mean comparison results for all tables that the district appears in. The folders will also include a `Review<<district name>>.csv` file that gives an overview of the district’s performance. Find out more by running this:
 
 `Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
 
