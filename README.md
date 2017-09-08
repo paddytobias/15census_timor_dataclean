@@ -26,11 +26,6 @@ The [Scripts folder](https://github.com/paddytobias/15census_timor_dataclean/tre
 
 DataReview is now including one script ([DistrictReview_allDistricts](https://github.com/paddytobias/15census_timor_dataclean/blob/master/Scripts/Scripts_DataReview/DistrictReview_allDistricts.R)) to create a table for each district that compares its totals to the national average and separately counts the number of times this is above or below. These numbers are only collected on relevant census data-tables; all other data-tables are given NAs. The plan is to then remove all NA rows from these tables and then cbind district tables together to get a national overview of the district breakdown of average comparisons. The script also outputs these district comparions to the national average for each census data-tables.
 
-## DOI
-
-Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection: 
-[![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
-
 
 ## Processing the data yourself
 
@@ -48,6 +43,7 @@ Data Cleaning:
 3. Collapse the headers into one row
 
 `Rscript Scripts/Scripts_DataCleaning/3.collapseHeader.R`
+
 `Rscript Scripts/Scripts_DataCleaning/4.finalCollapse.R`
 
 4. Do a final clean
@@ -58,5 +54,10 @@ Reviewing the data:
 5. Review all districts by how they compare to the national average for each table variable (where relevant)
 
 `Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
+
+## DOI
+
+Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection: 
+[![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
 
 
