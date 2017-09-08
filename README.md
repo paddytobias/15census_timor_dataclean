@@ -30,3 +30,28 @@ DataReview is now including one script ([DistrictReview_allDistricts](https://gi
 
 Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection: 
 [![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
+
+
+## Processing the data yourself
+
+After you’ve downloaded the Git repository run the following scripts:
+
+Data Cleaning: 
+1. Extract all 800 worksheets from the 46 census workbooks
+`Rscript Scripts/Scripts_DataCleaning/1.ConvertingXLStoCSV.R`
+
+2. Rename the filenames of worksheets with table names of each
+`Rscript Scripts/Scripts_DataCleaning/2.RenameOldtoNew.R`
+
+3. Collapse the headers into one row
+`Rscript Scripts/Scripts_DataCleaning/3.collapseHeader.R`
+`Rscript Scripts/Scripts_DataCleaning/4.finalCollapse.R`
+
+4. Do a final clean
+`Rscript Scripts/Scripts_DataCleaning/5.finalClean.R`
+
+Reviewing the data: 
+5. Review all districts by how they compare to the national average for each table variable (where relevant)
+`Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
+
+
