@@ -58,7 +58,7 @@ Then you will need to download this Git repository. After you have done this, ru
 
 `Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
 
-## How reference
+## How to reference
 
 Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection:
 
