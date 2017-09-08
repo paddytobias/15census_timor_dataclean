@@ -29,9 +29,9 @@ DataReview is now including one script ([DistrictReview_allDistricts](https://gi
 
 ## Processing the data yourself
 
-After you’ve downloaded the Git repository run the following scripts:
+After you’ve downloaded the Git repository run the following scripts from commandline:
 
-Data Cleaning: 
+### Data Cleaning: 
 1. Extract all 800 worksheets from the 46 census workbooks
 
 `Rscript Scripts/Scripts_DataCleaning/1.ConvertingXLStoCSV.R`
@@ -50,12 +50,13 @@ Data Cleaning:
 
 `Rscript Scripts/Scripts_DataCleaning/5.finalClean.R`
 
-Reviewing the data: 
+###Reviewing the data:
+ 
 5. Review all districts by how they compare to the national average for each table variable (where relevant)
 
 `Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
 
-## DOI
+## How reference
 
 Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection: 
 [![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
