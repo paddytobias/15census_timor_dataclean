@@ -3,7 +3,7 @@
 *I am still refining these scripts for others to repeat my work.* 
 
 
-The objective is to get the Excel data, published by the [General Directorate of Statistics](http://www.statistics.gov.tl/category/publications/census-publications/2015-census-publications/), into a state so that meta-analyses can be conducted programmatically across all ~700 worksheets. 
+The objective is to get the Excel data, published by the [General Directorate of Statistics](http://www.statistics.gov.tl/category/publications/census-publications/2015-census-publications/), into a state so that meta-analyses can be conducted programmatically across all 700-800 worksheets. 
 
 ## Data
 The [Data folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all 45 Excel workbooks as well as a pdf of the Preliminary Report of the 2015 Population and Housing Census.
@@ -62,7 +62,7 @@ Then you will need to download this Git repository. After you have done this, ru
 
 Please feel free to use these scripts for your own work, but if you do, please site their origin using the DOI for this collection:
 
-Tobias P, 2017, “2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets”, GitHub, ![https://github.com/paddytobias/15census_timor_dataclean](https://github.com/paddytobias/15census_timor_dataclean), 
+Tobias P, 2017, “2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets”, GitHub, [https://github.com/paddytobias/15census_timor_dataclean](https://github.com/paddytobias/15census_timor_dataclean), 
 [![DOI](https://zenodo.org/badge/96260480.svg)](https://zenodo.org/badge/latestdoi/96260480)
 
 
