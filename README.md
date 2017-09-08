@@ -29,7 +29,9 @@ DataReview is now including one script ([DistrictReview_allDistricts](https://gi
 
 ## Processing the data yourself
 
-After you’ve downloaded the Git repository run the following scripts from commandline:
+The prerequisite for running these scripts is the ![latest download of R](https://cran.r-project.org/mirrors.html).
+
+Then you will need to download this Git repository. After you have done this, run the scripts with the following commands:
 
 ### Data Cleaning: 
 1. Extract all 800 worksheets from the 46 census workbooks
