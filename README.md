@@ -63,15 +63,15 @@ Then you will need to download this Git repository. After you have done this, ru
 
 `Rscript Scripts/Scripts_DataReview/2.aggregateTotals.R`
 
-### National graphs of the data
+### National graphs of the data:
 
-* Once you have run through the scripts above, the follow graphing scripts can be run. 
+Once you have run through the scripts above, the follow graphing scripts can be run. 
 
-A script for polygon graphs of the “master_dataReview.csv” so you can see the national overview and how each district compares per variable. Output can be found in “data/graphs/nationalResults”.
+* A script for polygon graphs of the “master_dataReview.csv” so you can see the national overview and how each district compares per variable. Output can be found in “data/graphs/nationalResults”.
 
 `Rscript Scripts/Scripts_Graphing/Polygons_comparingtoNationalResults.R`
 
-A script that will do a check on which data tables have only district data in it (i.e., just the 13 districts, no subdistrict data) (output of this is found in "data/data_check”). It then creates polygon graphs for national overview per variable of the relevant data tables. Output can be found in “data/graphs/districtOnly/“. There should be 60 graphs found here.
+* A script that will do a check on which data tables have only district data in it (i.e., just the 13 districts, no subdistrict data) (output of this is found in "data/data_check”). It then creates polygon graphs for national overview per variable of the relevant data tables. Output can be found in “data/graphs/districtOnly/“. There should be 60 graphs found here.
 
 `Rscript Scripts/Scripts_Graphing/Polygons_districtOnly.R`
 
