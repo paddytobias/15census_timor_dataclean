@@ -1,7 +1,9 @@
 # 2015 Timor-Leste Census data: Data Processing and Analysis in R scripts
 
 
-The objective is to get the Excel data, published by the [General Directorate of Statistics](http://www.statistics.gov.tl/category/publications/census-publications/2015-census-publications/), into a state so that meta-analyses can be conducted programmatically across all 700-800 worksheets. 
+The objective is to get the Excel data, published by the [General Directorate of Statistics](http://www.statistics.gov.tl/category/publications/census-publications/2015-census-publications/), into a tidy state so that meta-analyses can be conducted programmatically across all 700-800 worksheets. 
+
+You can download this repository and run the commands (described below) to reproduce the file and image outputs. 
 
 ## Data
 The [Data folder](https://github.com/paddytobias/15census_timor_dataclean/tree/master/data) holds all 45 Excel workbooks as well as a pdf of the Preliminary Report of the 2015 Population and Housing Census.
@@ -62,6 +64,8 @@ Then you will need to download this Git repository. After you have done this, ru
 `Rscript Scripts/Scripts_DataReview/2.aggregateTotals.R`
 
 ### National graphs of the data
+
+* Once you have run through the scripts above, the follow graphing scripts can be run. 
 
 A script for polygon graphs of the “master_dataReview.csv” so you can see the national overview and how each district compares per variable. Output can be found in “data/graphs/nationalResults”.
 
