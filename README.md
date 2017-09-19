@@ -1,6 +1,4 @@
-# 2015 Timor-Leste Census data: Data Processing and Analysis in R scriptlets
-
-*I am still refining these scripts for others to repeat my work.* 
+# 2015 Timor-Leste Census data: Data Processing and Analysis in R scripts
 
 
 The objective is to get the Excel data, published by the [General Directorate of Statistics](http://www.statistics.gov.tl/category/publications/census-publications/2015-census-publications/), into a state so that meta-analyses can be conducted programmatically across all 700-800 worksheets. 
