@@ -1,6 +1,7 @@
 ##AGGREGATE TOTAL REVIEW DATA for national average, national minimums and national maximums. Outputted into a .csv called "master_dataReview
 
 #district = "AILEU"
+dir.create("data/data_Review/")
 
 #get district names
 districts <- read.csv("data/data_Cleaning/finalData/X2.1.a.Table.1.a.Total.population.and.household.type.by.sex.and.Municipality.csv", stringsAsFactors = FALSE)

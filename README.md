@@ -56,9 +56,25 @@ Then you will need to download this Git repository. After you have done this, ru
  
 5. Review all districts by how they compare to the national average for each table variable (where relevant). Upon running this you will get a folder for each district holding the mean comparison results for all tables that the district appears in. The folders will also include a `Review<<district name>>.csv` file that gives an overview of the district’s performance. Find out more by running this:
 
-`Rscript Scripts/Scripts_DataReview/DistrictReview_allDistricts.R`
+`Rscript Scripts/Scripts_DataReview/1.DistrictReview_allDistricts.R`
 
-## How to reference
+
+6. Aggregates all of the totals for each district in terms of how many times in the census data it was above and below the national average, and how many times it was the national minimum and national maximum. This script outputs a file called “master_dataReview.csv” in the folder “data/data_Review/“. It relies on the previous script to be run (i.e., 1.DistrictReview_allDistricts.R).
+
+`Rscript Scripts/Scripts_DataReview/2.aggregateTotals.R`
+
+### National graphs of the data
+
+A script for polygon graphs of the “master_dataReview.csv” so you can see the national overview and how each district compares per variable. Output can be found in “data/graphs/nationalResults”.
+
+`Rscript Scripts/Scripts_Graphing/Polygons_comparingtoNationalResults.R`
+
+A script that will do a check on which data tables have only district data in it (i.e., just the 13 districts, no subdistrict data) (output of this is found in "data/data_check”). It then creates polygon graphs for national overview per variable of the relevant data tables. Output can be found in “data/graphs/districtOnly/“. There should be 60 graphs found here.
+
+`Rscript Scripts/Scripts_Graphing/Polygons_districtOnly.R`
+
+
+## How to reference this work
 
 Please feel free to use these scripts for your own work, but if you do, please cite the origin using the reference below and the DOI for this collection:
 

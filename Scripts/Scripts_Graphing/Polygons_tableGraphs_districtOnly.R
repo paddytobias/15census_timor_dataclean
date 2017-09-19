@@ -8,6 +8,36 @@
 #start clock
 startTime <- Sys.time()
 
+dir.create("data/data_check")
+
+df = data.frame("Filename" = as.character(), "Sheet has only districts" = as.character(), stringsAsFactors = FALSE)
+write.csv(df, "data/data_check/districtOnlyCheck.csv")
+
+districtOnlyCheck = function(filename) {
+  dat = read.csv(paste0("data/data_Cleaning/finalData/", filename), header = FALSE, stringsAsFactors = FALSE)
+  districtOnly = read.csv("data/data_check/districtOnlyCheck.csv", header = TRUE, stringsAsFactors = FALSE)
+  if(dat[2,1] == "AILEU" & dat[3,1] == "AINARO"){ #can change for dat[2,1] == "AILEU" & dat[3,1] == "AINARO" | dat[3,1] == "AILEU" & dat[4,1] == "AINARO" because some tables start on the third line
+    x = cbind(filename, "TRUE")
+    write.csv(rbind(districtOnly,x), "data/data_check/districtOnlyCheck.csv", row.names = FALSE)
+  } else {
+    x = cbind(filename, "FALSE")
+    write.csv(rbind(districtOnly,x), "data/data_check/districtOnlyCheck.csv", row.names = FALSE)
+  }
+}
+
+#districtOnlyCheck(filename)
+
+districtOnlyCheck_all = function(pattern) {
+  filenames = list.files(path = "data/data_Cleaning/finalData/", pattern = pattern)
+  for (f in filenames) {
+    districtOnlyCheck(f)
+  }
+}
+
+districtOnlyCheck_all("*.csv")
+
+paste("Output found in data/data_check/districtOnlyCheck.csv")
+
 #load relevant packages
 library(rgdal)
 library(ggmap)
